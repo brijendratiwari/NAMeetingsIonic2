@@ -35,8 +35,10 @@ page-helpline-options {
 	.item-ios{
 		margin-left: 10%;
 		width: 40%!important;
-		height: 5%!important;
+		min-height:2rem !important;
+		max-height:3.2rem !important;
 		border-radius: 10px;
+		font-size: 12px!important;
 	}
 
 	.button {

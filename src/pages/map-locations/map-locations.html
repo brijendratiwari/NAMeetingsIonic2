@@ -1,0 +1,29 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Map Locations</ion-title>
+	</ion-navbar>
+
+ <ion-toolbar no-border-top>
+ <div class="container-segment" *ngIf="maptype == 'multiple'">
+    <ion-segment [(ngModel)]="mapLocation" (ionChange)="changeMapLocation()">
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="one">
+        <img class="image-tag" src="./assets/NAMarkerSingle32.png">One Mtg
+      </ion-segment-button>
+      <ion-segment-button value="many">
+        <img class="image-tag" src="./assets/NAMarkerMultiple32.png"> Many Mtgs
+      </ion-segment-button>
+    </ion-segment>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="mapLocation">
+    <ion-item>
+        <div #mapCanvas id="map_canvas"></div>
+      </ion-item>
+  </div>
+</ion-content>

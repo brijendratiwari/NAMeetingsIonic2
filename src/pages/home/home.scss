@@ -1,0 +1,31 @@
+page-home {
+	.prefrence {
+		border-radius: 0.4em;
+		 box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+		 background: #616eb6 linear-gradient(#b7c1f6, #192668) repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #000;
+    .button-inner {
+			padding: 0.55em 8px 0.5em;
+		}
+	}
+
+	.logo {
+		margin: 20px 10%;
+		max-width: 600px;
+		width: 80%;
+	}
+
+	.button {
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		border: medium none;
+		color: #000;
+		font-weight: bold;
+		text-shadow: 0 1px 0 #fff;
+		margin-bottom: 25px;		
+	}
+
+	
+}

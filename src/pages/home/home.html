@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      NA Meeting Search
+    </ion-title>
+    <ion-buttons end>
+   		 <button ion-button class="prefrence" [navPush]="preferencesPage">Preferences</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="logo" src="./assets/logo.png" />
+
+  <button ion-button full round [navPush]="meetingFinderPage">Meeting Finder</button>
+  <button ion-button full round [navPush]="justForTodayPage">Just For Today</button>
+  <button ion-button full round [navPush]="appInfoPage">Application Info</button>
+
+</ion-content>

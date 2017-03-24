@@ -1,0 +1,21 @@
+page-na-meeting-search {
+	.title {
+		text-align: right;
+	}
+
+	.button {
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		border: medium none;
+		color: #000;
+		font-weight: bold;
+		text-shadow: 0 1px 0 #fff;
+		margin-bottom: 25px;	
+		.icon {
+			position: absolute;
+			right: 20px;
+			font-size: 22px;
+			color: #777;
+		}	
+	}
+	
+}

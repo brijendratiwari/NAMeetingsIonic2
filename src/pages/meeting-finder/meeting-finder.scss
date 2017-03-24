@@ -1,0 +1,25 @@
+page-meeting-finder {
+	.title {
+		text-align: right;
+	}
+	.meeting_finder_home {
+		text-align: center;
+
+		p {
+			font-size: 16px;
+			@media screen and (min-width: 600px) {
+				font-size: 22px;
+			}
+			color: #fff;
+		}
+	}
+
+	.button {
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		border: medium none;
+		color: #000;
+		font-weight: bold;
+		text-shadow: 0 1px 0 #fff;
+		margin-bottom: 25px;		
+	}
+}

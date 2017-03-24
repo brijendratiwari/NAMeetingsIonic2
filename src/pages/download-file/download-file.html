@@ -1,0 +1,25 @@
+<!--
+  Generated template for the DownloadFile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Download File</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="download-status">
+		<p>Please wait while updating data....</p>
+		<div *ngIf="loadingStatusOfHelplineFile && loadingStatusOfHelplineFile>0"> Helplines data update {{ loadingStatusOfHelplineFile }} % done.</div>
+		<div *ngIf="loadingStatusOfMeetingFile && loadingStatusOfMeetingFile > 0"> Meetings data update {{ loadingStatusOfMeetingFile }} % done.</div>
+		<div *ngIf="loadingStatusOfFormatsFile && loadingStatusOfFormatsFile > 0"> Formats data update {{ loadingStatusOfFormatsFile }} % done.</div>
+	</div>
+</ion-content>
+
+

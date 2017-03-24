@@ -1,0 +1,88 @@
+page-meeting-details {
+	.detail-container{
+		background-color:#fff;
+		color: #000;
+		text-shadow:none;
+		padding:3%;
+		-webkit-border-radius: 				0.8em /*{global-radii-buttons}*/;
+		border-radius: 						0.8em /*{global-radii-buttons}*/;
+		font-size: 1em;
+	}
+
+	.button {
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		border: medium none;
+		color: #000;
+		font-weight: bold;
+		text-shadow: 0 1px 0 #fff;
+		border-radius: 10px;
+		border:1px solid #6b649f;
+		margin-bottom: 10px;	
+	}
+
+	// .img-tag{
+	// 	height: 40px;
+	// 	width: 40px;
+	// 	float: right;
+	// 	padding:5px;
+	// }
+
+	// p{
+	// 	margin-top: 0px!important;
+	// 	text-shadow: 0 1px 0 #fff;
+	// }
+	// h4{
+	// 	margin-bottom: 0px!important;
+	// }
+
+	// .address-bar{
+	// 	width: 79%;
+	// 	float: left;
+	// 	margin-bottom: 5px;
+	// }
+
+
+	.clearfix {
+		display: inline-block;
+		&:after {
+			content: ".";
+			display: block;
+			clear: both;
+			visibility: hidden;
+			line-height: 0;
+			height: 0;
+		}
+	}
+	.fieldLabel{
+		color: #888;
+		font-weight:normal;
+		float: left;
+		margin-right:10px;
+	}
+	.row{
+		width:100%;
+		margin-bottom: 3%;
+	}
+	.fieldValue{
+		font-weight:bold;
+		float: left;
+	}
+	.mtgInfo{
+		float: left;
+	}
+	.mtgDayTime{
+		float:left;
+		font-weight:bold;
+		margin-right:4%;
+	}
+	.mtgClosed{
+		float:left;
+	}
+	.mtgIcons{
+		float:right;
+		img{
+			width: 24px;
+			margin-right:5px;
+		}
+	}
+}

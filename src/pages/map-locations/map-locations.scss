@@ -1,0 +1,52 @@
+page-map-locations {
+	.title {
+		text-align: right;
+	}
+	#map_canvas {
+		opacity: 1;
+		width: 100vw;
+		height: 98vh;
+		background-color : transparent;
+	}
+
+	.item {
+		background-color: transparent;
+	}
+	
+	.toolbar-ios .segment-button {
+		height: 3.6rem;
+		font-size: 1.3rem;
+		line-height: 3.5rem;
+		color: #000000;
+		max-width: 100%!important;
+		min-width: 100px!important;
+		font-weight: 400;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #616eb6;
+	}
+
+	.segment-ios .segment-button.segment-activated{
+		// background-color: #a5a1c4;
+		background:  #a5a1c4 linear-gradient(#a5a1c4,#413874) repeat scroll 0 0;
+	}
+
+	.image-tag{
+		height: 25px;
+		margin-top: 5px;
+		padding: 0px;
+		margin: -5px 3px;
+	}
+
+	.container-segment{
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		margin: 18px;
+		border-radius: 5px;
+		height: 35px;
+	}
+
+	.toolbar-ios .segment-ios{
+		padding: 22px!important;
+	}
+
+}

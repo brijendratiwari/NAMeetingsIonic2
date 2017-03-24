@@ -1,0 +1,59 @@
+page-helpline-options {
+	.title {
+		text-align: right;
+	}
+
+	.container-segment{
+		// background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		// margin: 18px;
+		color: #000000;
+		border-radius: 5px;
+		height: 35px;
+		border-color: #616eb6;
+	}
+
+	.segment-ios .segment-button.segment-activated{
+		// background-color: #a5a1c4;
+		border-color: #616eb6;
+		background:  #a5a1c4 linear-gradient(#a5a1c4,#413874) repeat scroll 0 0;
+	}
+
+	.heplines-container{
+		padding: 5px;
+		width: 100%;
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		height: 30px;
+	}
+
+	.icon {
+		position: absolute;
+		right: 20px;
+		font-size: 22px;
+		color: #777;
+	}
+
+	.item-ios{
+		margin-left: 10%;
+		width: 40%!important;
+		height: 5%!important;
+		border-radius: 10px;
+	}
+
+	.button {
+		margin-left: 10%;
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		border: medium none;
+		color: #000;
+		height: 30px;
+		text-shadow: 0 1px 0 #fff;
+		margin-bottom: 25px;		
+	}
+
+	.area-code{
+		display: flex;
+	}
+
+	p{
+		color: #fff;
+	}
+}

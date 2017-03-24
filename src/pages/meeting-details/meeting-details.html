@@ -1,0 +1,37 @@
+<!--
+  Generated template for the MeetingDetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Meeting Details</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="detail-container">
+			<div [innerHtml]="meetingDetails">
+			</div>
+
+			<button ion-button full (click)="showMap()" >
+				Map
+			</button>
+
+			<button ion-button full (click)="getDirections()">
+				Directions
+			</button>
+
+			<button ion-button full (click)="addRemoveFav()">
+				{{favoritesButtonTitle}}
+			</button>
+
+			<button ion-button full (click)="emailAFriend()">
+				Email a Friend
+			</button>	
+		</div>
+	</ion-content>

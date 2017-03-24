@@ -1,0 +1,41 @@
+page-helpline-detail {
+	.content-detail{
+		width: 100%;
+		border-top:30px solid #13359e;
+		border-color: linear-gradient(#476ad0, #1b1c4d) repeat scroll 0 0;
+		height: auto;
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		border-radius: 10px;
+		z-index: 99999999;
+	}
+
+	.sub-content{
+		padding-top: 8px;
+		padding-bottom: 10px;
+	}
+
+	.img-tag{
+		height: 25px;
+		width: 25px;
+	}
+
+	.bottom-content b{
+		margin-left: calc(50% - 50px);
+	}
+
+	.content-block{
+		border-top: none;
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		.icon {
+			position: absolute;
+			right: 20px;
+			font-size: 25px;
+			color: #777;
+			margin-top: 1.5em;
+		}
+		p{
+			margin-top: 0px!important;
+			text-shadow: 0 1px 0 #fff;
+		}
+	}
+}

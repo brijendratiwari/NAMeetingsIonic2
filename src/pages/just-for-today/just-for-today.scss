@@ -1,0 +1,41 @@
+page-just-for-today {
+	.title {
+		text-align: right;
+	}
+	.jft-text-container {
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 5px;
+	}
+	.jft-text {
+		padding: 16px;
+	}
+
+	.top_left,
+	.top_right,
+	.top_right,
+	.top_right {
+		width: 100%;
+	}
+	.top_left{
+		background-repeat: no-repeat;
+		background-image: url('../assets/jft_tl_corner.png');
+	}
+	.top_right{
+		background-repeat:no-repeat;
+		background-image: url('../assets/jft_tr_corner.png');
+		background-position:top right;
+	}
+	.bottom_left{
+		background-repeat:no-repeat;
+		background-image: url('../assets/jft_bl_corner.png');
+		background-position:bottom left;
+	}
+	.bottom_right{
+		background-repeat:no-repeat;
+		background-image: url('../assets/jft_br_corner.png');
+		background-position:bottom right;
+	}
+
+
+}

@@ -1,0 +1,67 @@
+page-preferences {
+	.title {
+		text-align: right;
+	}
+	.prefrence-options{
+		text-align: center;
+		p {
+			font-size: 16px;
+			@media screen and (min-width: 600px) {
+				font-size: 22px;
+			}
+			color: #fff;
+		}
+	}
+	
+	.button {
+		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		border: medium none;
+		color: #000;
+		font-weight: bold;
+		text-shadow: 0 1px 0 #fff;
+		margin-bottom: 25px;	
+		font-size: 13px;	
+	}
+
+	[icon-left] ion-icon{
+		padding-right:0px!important;
+	}
+
+	.days-btn {
+		.button {
+			padding-left: 15px;
+		}
+		.button-inner{
+			text-align: left!important;
+
+			.radio {
+				// margin-right: 10px;
+				.radio-checked {
+					border-color: #10339d;
+				}
+				.radio-inner {
+					background-color: #10339d;
+					display: none;
+				}
+			}
+		}
+	}
+	.reminder-text{
+		text-align: center;
+		color: #fff;
+	}
+	.sunny{
+		padding: 20px!important;
+		.right-icon {
+			position: absolute;
+			right: 20px;
+			top: 6px;
+			color: #444;
+			font-size: 25px;
+			bottom: 0;
+		}
+	}	
+	.days-btn .button-inner{
+		justify-content:flex-start;
+	}
+}

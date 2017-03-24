@@ -16,21 +16,27 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
   })
   export class HelplineOptionsPage {
     helplineDetailPage = HelplineDetailPage;
-    helplinesSegOne='world';
+    
+    helplinesSegOne = 'usa';
+    helplinesSegTwo = 'areacode';
 
     helplineDataUSACANADA = [];
     helplineDataCountry = [];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private sqliteData:SqliteData, public common:Common, public plt:Platform) {}
+    constructor(public navCtrl: NavController, public navParams: NavParams, private sqliteData:SqliteData, public common:Common, public plt:Platform) {
+
+    }
 
     ionViewDidLoad() {
       console.log('ionViewDidLoad HelplineOptionsPage');
 
-      
+      this.getHelplinesData();
+    }
 
+    getHelplinesData() {
       this.sqliteData.getHelplinesDetails().then(res => {
         console.log("Helpline Data"+JSON.stringify(res));
-
+        
         let dataset = res['rows'];
         if(dataset.length > 0) {
 
@@ -83,7 +89,6 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
         console.error(error);
       });
     }
-
     usaWorldChange() {
 
     }

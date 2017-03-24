@@ -42,17 +42,28 @@
 
 <ion-content>
 	<div [ngSwitch]="helplinesSegOne" padding>
-		<div class="heplines-container" [navPush]="helplineDetailPage" *ngFor="let stateName of helplineDataUSACANADA">
-			{{stateName}}
-			<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
-		</div>	
+		<div *ngSwitchCase="'world'">
+			<div class="heplines-container" [navPush]="helplineDetailPage" *ngFor="let stateName of helplineDataCountry">
+				{{stateName}}
+				<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
+			</div>	
+		</div>		
 	</div>
 
 	<div [ngSwitch]="helplinesSegTwo" padding class="area-code" *ngIf="helplinesSegOne == 'usa'">
-	<p>Area Code:</p>
-		<ion-item>
-			<ion-input placeholder="Text Input"></ion-input>
-		</ion-item>
-		<button ion-button round (click)="areaSearchCode()">Search</button>
+		<div *ngSwitchCase="'areacode'">
+			<p>Area Code:</p>
+			<ion-item>
+				<ion-input placeholder="Text Input"></ion-input>
+			</ion-item>
+			<button ion-button round (click)="areaSearchCode()">Search</button>
+		</div>
+
+		<div *ngSwitchCase="'state'">
+			<div class="heplines-container" [navPush]="helplineDetailPage" *ngFor="let stateName of helplineDataUSACANADA">
+				{{stateName}}
+				<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
+			</div>	
+		</div>		
 	</div>
 </ion-content>

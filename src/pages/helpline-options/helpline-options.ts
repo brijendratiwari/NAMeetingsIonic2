@@ -16,6 +16,7 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
   })
   export class HelplineOptionsPage {
     helplineDetailPage = HelplineDetailPage;
+    helplinesSegOne='world';
 
     helplineDataUSACANADA = [];
     helplineDataCountry = [];

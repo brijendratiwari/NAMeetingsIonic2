@@ -16,6 +16,7 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
   })
   export class HelplineOptionsPage {
     helplineDetailPage = HelplineDetailPage;
+    helplinesSegOne='world';
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private sqliteData:SqliteData, public common:Common, public plt:Platform) {}
 

@@ -20,7 +20,7 @@ declare var window: any;
     public ddlSortby:any = "dist";
 
     public helplinesSegOne:any = "usa";
-    public helplinesSegTwo:any = "areacode";
+    public helplinesSegTwo:any = "state";
 
     constructor(public sqliteData:SqliteData, public http: Http , public alertCtrl:AlertController, public plt:Platform) {
       console.log('Hello Common Provider');

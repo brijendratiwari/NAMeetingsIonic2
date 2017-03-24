@@ -23,6 +23,10 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
     helplineDataUSACANADA = [];
     helplineDataCountry = [];
 
+    areaCode;
+
+    areaCodeErrorText = "";
+
     constructor(public navCtrl: NavController, public navParams: NavParams, private sqliteData:SqliteData, public common:Common, public plt:Platform) {
       this.helplinesSegOne = common.helplinesSegOne;
       this.helplinesSegTwo = common.helplinesSegTwo;
@@ -91,9 +95,75 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
       });
     }
 
+    areaSearchCode() {
+
+      var dataArr = [];
+
+      if(!this.areaCode || this.areaCode == '') {
+        this.areaCodeErrorText = "Please enter an area code.";
+      } else {
+        this.areaCodeErrorText = "";
+
+        var headerRow = "";
+        var noRecordFound = true;
+
+        if (this.areaCode.length > 2) {
+          this.areaCode.trim();
+
+          this.sqliteData.getCountryDetails(this.areaCode).then(result => {
+            var ds = result['rows'];
+            if (ds.length > 0) {
+              for (var i = 0; i < ds.length; i++) {
+                var row = ds.item(i);
+
+                var description = row['description'];
+
+
+                var phone = row['phone'];
+                phone = phone.trim();
+                if (phone == '') {
+                  phone = '---';
+                } 
+
+                var website = row['website'];
+                website = website.trim();
+
+
+                if (headerRow == '') {
+                  headerRow = "(" + this.areaCode + ") - " + row['statename'] + "/" + row['countryname'];
+
+                  let data = {
+                    title:headerRow,
+                    type:'option-title'
+                  };
+                  dataArr.push(data);
+                }
+                let data = {
+                  description:description,
+                  phone:phone,
+                  website:website,
+                  type:'option-details'
+                };
+
+                dataArr.push(data);
+              }
+
+              this.navCtrl.push(HelplineDetailPage, {'value':dataArr, 'type':'areacode'});
+            } else {
+              this.common.presentAlert("Not Found", "Sorry, the Area Code you entered was not found.");
+            }
+          }, error => {
+            console.error(error);
+          });
+        } else {
+          this.common.presentAlert("", "Please enter valid area code.");
+        }
+      }
+    }
+
     helplinesSeggueChange() {
       this.common.helplinesSegOne = this.helplinesSegOne;
       this.common.helplinesSegTwo = this.helplinesSegTwo;
     }
-    
+
   }

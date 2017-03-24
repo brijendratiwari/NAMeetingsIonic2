@@ -635,8 +635,7 @@ import { AppVersion } from 'ionic-native';
         .then(() => {
           let query = "SELECT description,phone,website,countryname,statename FROM helplines WHERE areacode LIKE '%" + areaCode + "%' ";
           db.executeSql(query, []).then((getResult) =>{
-            let count = getResult.rows.length;
-            resolve(count);
+            resolve(getResult);
           }, (error) => 
           {
             console.log('meetings SELECT error : ' + error.message);
@@ -711,7 +710,7 @@ import { AppVersion } from 'ionic-native';
         db.openDatabase(this.getDbOptionsForName("helplines.db"))
         .then(() => {
           let query = "SELECT DISTINCT countryname FROM helplines ORDER BY countryname";
-          db.executeSql(query, ["Canada"]).then((getResult) =>{
+          db.executeSql(query, []).then((getResult) =>{
             resolve(getResult);
           }, (error) => 
           {

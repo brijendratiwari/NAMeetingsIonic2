@@ -17,7 +17,16 @@ import { SqliteData } from '../../providers/sqlite-data';
   	optionnsArr = [];
 
   	constructor(public navCtrl: NavController, public navParams: NavParams, private sqliteData:SqliteData, public common:Common, public plt:Platform) {
+  		let type = navParams.get('type');
+  		let value = navParams.get('value');
 
+  		if(type == 'country') {
+  			this.helplineOptionsCountry(value);
+  		} else if(type == 'state') {
+  			this.helplineOptions(value);
+  		} else if(type == 'areacode') {
+  			this.optionnsArr = value;
+  		}
   	}
 
   	ionViewDidLoad() {
@@ -77,7 +86,7 @@ import { SqliteData } from '../../providers/sqlite-data';
   	helplineOptions(state) {
 
   		this.optionnsArr = [];
-  		
+
   		var areaCode = "ccccccc";
   		var countryName = "";
   		var stateName = "";

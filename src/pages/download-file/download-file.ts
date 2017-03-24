@@ -1,6 +1,6 @@
 import { Component , NgZone } from '@angular/core';
 import { NavController, NavParams , Platform } from 'ionic-angular';
-import { Transfer , Network } from 'ionic-native';
+import { Transfer } from 'ionic-native';
 import { Common } from '../../providers/common';
 
 declare var window: any;

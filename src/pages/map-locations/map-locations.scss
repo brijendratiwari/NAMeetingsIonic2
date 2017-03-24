@@ -26,9 +26,17 @@ page-map-locations {
 		border-color: #616eb6;
 	}
 
+	.segment-ios .segment-button{
+		background:  #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0!important;
+		color: #000000;
+		text-shadow: 0 1px 0 #fff;
+		border-color:#616eb6;
+	}
+
 	.segment-ios .segment-button.segment-activated{
-		// background-color: #a5a1c4;
-		background:  #a5a1c4 linear-gradient(#a5a1c4,#413874) repeat scroll 0 0;
+		text-shadow: 0 1px 0 #000;
+		border-color: #616eb6;
+		background:  #a5a1c4 linear-gradient(#a5a1c4,#413874) repeat scroll 0 0!important;
 	}
 
 	.image-tag{
@@ -38,12 +46,12 @@ page-map-locations {
 		margin: -5px 3px;
 	}
 
-	.container-segment{
-		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
-		margin: 18px;
-		border-radius: 5px;
-		height: 35px;
-	}
+	// .container-segment{
+	// 	background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+	// 	margin: 18px;
+	// 	border-radius: 5px;
+	// 	height: 35px;
+	// }
 
 	.toolbar-ios .segment-ios{
 		padding: 22px!important;

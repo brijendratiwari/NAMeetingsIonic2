@@ -24493,6 +24493,10 @@ page-helpline-options .title {
   text-align: right;
 }
 
+page-helpline-options .scroll-content {
+  padding-top: 30px;
+}
+
 page-helpline-options .container-segment {
   color: #000000;
   border-radius: 5px;
@@ -24500,9 +24504,18 @@ page-helpline-options .container-segment {
   border-color: #616eb6;
 }
 
-page-helpline-options .segment-ios .segment-button.segment-activated {
+page-helpline-options .segment-ios .segment-button {
+  background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0 !important;
+  color: #000000;
+  text-shadow: 0 1px 0 #fff;
   border-color: #616eb6;
-  background: #a5a1c4 linear-gradient(#a5a1c4, #413874) repeat scroll 0 0;
+  border: none;
+}
+
+page-helpline-options .segment-ios .segment-button.segment-activated {
+  text-shadow: 0 1px 0 #000;
+  border-color: #616eb6;
+  background: #a5a1c4 linear-gradient(#a5a1c4, #413874) repeat scroll 0 0 !important;
 }
 
 page-helpline-options .heplines-container {
@@ -24520,8 +24533,8 @@ page-helpline-options .icon {
 }
 
 page-helpline-options .item-ios {
-  margin-left: 10%;
-  width: 40% !important;
+  margin-left: 5%;
+  width: 100px !important;
   min-height: 2rem !important;
   max-height: 3.2rem !important;
   border-radius: 10px;
@@ -24533,19 +24546,46 @@ page-helpline-options .button {
   background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
   border: medium none;
   color: #000;
-  height: 30px;
+  height: 25px;
+  width: 55px;
   text-shadow: 0 1px 0 #fff;
-  margin-bottom: 25px;
 }
 
 page-helpline-options .area-code {
+  padding: 0 16px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-page-helpline-options p {
+page-helpline-options .area-code p {
   color: #fff;
+  font-size: 1.6rem;
+}
+
+page-helpline-options .area-code div:first-child {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+page-helpline-options .area-code .button-ios {
+  font-size: 1.2rem;
+}
+
+page-helpline-options .area-code .areacode-error {
+  width: 100%;
+  text-align: center;
+  color: #f00;
+  font-size: 16px;
+  margin-top: 8px;
 }
 
 page-helpline-options .toolbar-ios .segment-button {
@@ -24657,8 +24697,17 @@ page-map-locations .toolbar-ios .segment-button {
   border-color: #616eb6;
 }
 
+page-map-locations .segment-ios .segment-button {
+  background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0 !important;
+  color: #000000;
+  text-shadow: 0 1px 0 #fff;
+  border-color: #616eb6;
+}
+
 page-map-locations .segment-ios .segment-button.segment-activated {
-  background: #a5a1c4 linear-gradient(#a5a1c4, #413874) repeat scroll 0 0;
+  text-shadow: 0 1px 0 #000;
+  border-color: #616eb6;
+  background: #a5a1c4 linear-gradient(#a5a1c4, #413874) repeat scroll 0 0 !important;
 }
 
 page-map-locations .image-tag {
@@ -24666,13 +24715,6 @@ page-map-locations .image-tag {
   margin-top: 5px;
   padding: 0px;
   margin: -5px 3px;
-}
-
-page-map-locations .container-segment {
-  background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
-  margin: 18px;
-  border-radius: 5px;
-  height: 35px;
 }
 
 page-map-locations .toolbar-ios .segment-ios {

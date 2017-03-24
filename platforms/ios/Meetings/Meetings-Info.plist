@@ -62,9 +62,9 @@
       <true/>
     </dict>
     <key>NSLocationAlwaysUsageDescription</key>
-    <string>$NSLocationAlwaysUsageDescription</string>
+    <string>$NSLOCATIONALWAYSUSAGEDESCRIPTION</string>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>$NSLocationWhenInUseUsageDescription</string>
+    <string>$NSLOCATIONWHENINUSEUSAGEDESCRIPTION</string>
     <key>NSMainNibFile</key>
     <string/>
     <key>NSMainNibFile~ipad</key>

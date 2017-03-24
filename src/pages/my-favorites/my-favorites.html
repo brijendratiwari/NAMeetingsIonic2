@@ -15,7 +15,7 @@
 
 <ion-content padding>
 	<div class="content-detail">
-		<div class="sub-content">
+		<div class="sub-content" *ngIf="dataToDisplay.length > 0">
 			<div class="content-block" padding  *ngFor="let data of dataToDisplay">
 				<ion-icon name="remove-circle" class="remove-icon" (click)="deleteFav(data)"></ion-icon>
 				<ion-icon name="ios-arrow-dropright-circle-outline" class="detail-icon" [navPush]="meetingDetails" [navParams]="{'mtg_id':data.recordID, 'mtg_distance':data.distance}"></ion-icon>

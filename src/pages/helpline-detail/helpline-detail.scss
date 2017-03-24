@@ -8,6 +8,7 @@ page-helpline-detail {
 	}
 
 	.sub-content{
+		border-bottom: 1px solid #000000;
 		// padding-top: 8px;
 		// padding-bottom: 10px;
 		padding-right: 0px;
@@ -28,7 +29,8 @@ page-helpline-detail {
 	.content-block{
 		border-top: none;
 		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
-		height: 15vh;
+		height: auto;
+		overflow: hidden;
 		min-height: 10vh;
 		.icon {
 			position: absolute;

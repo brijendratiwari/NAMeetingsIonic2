@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Common } from '../../providers/common';
 import { SqliteData } from '../../providers/sqlite-data';
-import { Geolocation,GoogleMap, GoogleMapsEvent, GoogleMapsMarker, GoogleMapsLatLng } from 'ionic-native';
 import { MeetingDetailsPage } from '../meeting-details/meeting-details';
 
-declare var google: any;
+
 /*
   Generated class for the MyFavorites page.
 
@@ -17,52 +16,28 @@ declare var google: any;
   	templateUrl: 'my-favorites.html'
   })
   export class MyFavoritesPage {
-    currentLocation:any;
     dataToDisplay = [];
     meetingDetails = MeetingDetailsPage;
     latitude:any;
     longitude:any;
-    isShowFavDataList:any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,  public common:Common, public sqliteData:SqliteData) {}
 
     ionViewDidLoad() {
       console.log('ionViewDidLoad MyFavoritesPage');
-      this.getCurrentLocation();
 
+      this.latitude = this.navParams.get('lat');
+      this.longitude = this.navParams.get('lng');
 
+      this.showFavoriteMeetingsStep();
     }
 
 
-    getCurrentLocation(){
-      var ref = this;
+    showFavoriteMeetingsStep() {
+      let lat1 = this.latitude;
+      let lon1 = this.longitude;
 
-      //Default lat lng
-      var lat = 34.1331320;
-      var lng = -118.2013100;
-
-      Geolocation.getCurrentPosition({
-        enableHighAccuracy: true,
-        maximumAge: 3000,
-        timeout: 30000
-      }).then((position) => {
-        ref.currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        console.log("this is current location "+ref.currentLocation);
-        lat = ref.currentLocation.lat();
-        lng = ref.currentLocation.lng();
-        this.latitude = lat;
-        this.longitude = lng;
-        ref.showFavoriteMeetingsStep(lat, lng);
-      },function(err) {
-        ref.showFavoriteMeetingsStep(lat, lng);
-        this.latitude = lat;
-        this.longitude = lng;
-        alert('We were unable to determine your location, please turn on your GPS/Location services');
-      });
-    }
-
-    showFavoriteMeetingsStep(lat1, lon1) {
-       this.dataToDisplay = [];
+      this.dataToDisplay = [];
       var qry = "";
       this.sqliteData.showFavoriteMeetingsStep1(lat1, lon1).then(result => {
         var ds = result['rows'];
@@ -70,7 +45,6 @@ declare var google: any;
           for (var i = 0; i < ds.length; i++) {
             var row = ds.item(i);
             var comName = row['comName'];
-            //	comName = comName.replace("'", "''");
             if (qry == "") {
               qry = qry + "INSERT INTO favoritemeetings (meetingid,group_id,mtgTime,mtgDay,comName,latitude,longitude) VALUES (" + row["meetingid"] + "," + row["group_id"] + "," + row["mtgTime"] + "," + row["mtgDay"] + ",\"" + comName + "\"," + row["latitude"] + "," + row["longitude"] + ")";
             } else {
@@ -150,10 +124,8 @@ declare var google: any;
                       };
                       this.dataToDisplay.push(data);
                     }
-                    if(this.dataToDisplay.length>=1){
-                      this.isShowFavDataList = true;
-                    }else{
-                      this.isShowFavDataList = false;
+                    if(this.dataToDisplay.length == 0){
+                        this.navCtrl.pop();
                     }
                   }
 
@@ -171,7 +143,6 @@ declare var google: any;
           });
         } else {
           this.common.presentAlert('Information', 'You don\'t have any favorite meetings.');
-          this.isShowFavDataList = false;
         }
       }, error => {
         console.error(error);
@@ -181,21 +152,21 @@ declare var google: any;
 
 
 deleteFav(data){
-      this.sqliteData.deleteFromFavorites(data.recordID,this.latitude,this.longitude).then(result=>{
-        console.log(result);
-        var ds = result['rows'];
-        if (ds.length > 0) {
-          var row = ds.item(0);
-          this.sqliteData.removeFavoriteMeetingAndRefreshList(row['id'], row['latitude'], row['longitude'], row['mtg_day'], row['mtg_time'], row['com_name'], this.latitude, this.longitude).then(results=>{
-            console.log(results);
-            this.getCurrentLocation();
-          },error =>{
-            console.log(error);
-          });
-        }
-      },error=>{
+  this.sqliteData.deleteFromFavorites(data.recordID,this.latitude,this.longitude).then(result=>{
+    console.log(result);
+    var ds = result['rows'];
+    if (ds.length > 0) {
+      var row = ds.item(0);
+      this.sqliteData.removeFavoriteMeetingAndRefreshList(row['id'], row['latitude'], row['longitude'], row['mtg_day'], row['mtg_time'], row['com_name'], this.latitude, this.longitude).then(results=>{
+        console.log(results);
+        this.showFavoriteMeetingsStep();
+      },error =>{
         console.log(error);
       });
     }
+  },error=>{
+    console.log(error);
+  });
+}
 
 }

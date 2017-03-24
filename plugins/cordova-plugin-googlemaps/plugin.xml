@@ -198,12 +198,12 @@
 
         <preference name="NSLocationWhenInUseUsageDescription" default="Show your location on the map" />
         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
-            <string>$NSLocationWhenInUseUsageDescription</string>
+            <string>$NSLOCATIONWHENINUSEUSAGEDESCRIPTION</string>
         </config-file>
 
         <preference name="NSLocationAlwaysUsageDescription" default="Trace your location on the map" />
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
-            <string>$NSLocationAlwaysUsageDescription</string>
+            <string>$NSLOCATIONALWAYSUSAGEDESCRIPTION</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">

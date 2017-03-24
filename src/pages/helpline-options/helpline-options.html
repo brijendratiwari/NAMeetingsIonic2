@@ -24,7 +24,7 @@
 		</div>
 	</ion-toolbar>
 
-	<ion-toolbar no-border-top style="bottom: 20px;">
+	<ion-toolbar no-border-top style="bottom: 20px;" *ngIf="helplinesSegOne == 'usa'">
 		<div class="container-segment" >
 			<ion-segment [(ngModel)]="helplinesSegTwo">
 				<ion-segment-button value="areacode">
@@ -42,33 +42,13 @@
 
 <ion-content>
 	<div [ngSwitch]="helplinesSegOne" padding>
-		<div class="heplines-container" [navPush]="helplineDetailPage">
-			usa
+		<div class="heplines-container" [navPush]="helplineDetailPage" *ngFor="let stateName of helplineDataUSACANADA">
+			{{stateName}}
 			<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
-		</div>
-		<div class="heplines-container" [navPush]="helplineDetailPage">
-			usa
-			<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
-		</div>
-		<div class="heplines-container" [navPush]="helplineDetailPage">
-			usa
-			<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
-		</div>
-		<div class="heplines-container" [navPush]="helplineDetailPage">
-			usa
-			<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
-		</div>
-		<div class="heplines-container" [navPush]="helplineDetailPage">
-			usa
-			<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
-		</div>
-		<div class="heplines-container" [navPush]="helplineDetailPage">
-			usa
-			<ion-icon name="ios-arrow-dropright-circle-outline"></ion-icon>
-		</div>
+		</div>	
 	</div>
 
-	<div [ngSwitch]="helplinesSegTwo" padding class="area-code">
+	<div [ngSwitch]="helplinesSegTwo" padding class="area-code" *ngIf="helplinesSegOne == 'usa'">
 	<p>Area Code:</p>
 		<ion-item>
 			<ion-input placeholder="Text Input"></ion-input>

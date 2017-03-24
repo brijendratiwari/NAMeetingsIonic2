@@ -445,6 +445,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = P428BUHYJR;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Meetings" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -577,6 +583,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = P428BUHYJR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"Meetings/Plugins/com.googlemaps.ios\"",
@@ -592,7 +599,10 @@
 				INFOPLIST_FILE = "Meetings/Meetings-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.na.naapp;
 				PRODUCT_NAME = Meetings;
+				PROVISIONING_PROFILE = "4b239fbf-9bd9-4057-855b-27446313804b";
+				PROVISIONING_PROFILE_SPECIFIER = IgnisTestProfile;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -606,7 +616,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = P428BUHYJR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"Meetings/Plugins/com.googlemaps.ios\"",
@@ -620,7 +632,10 @@
 				INFOPLIST_FILE = "Meetings/Meetings-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.na.naapp;
 				PRODUCT_NAME = Meetings;
+				PROVISIONING_PROFILE = "4b239fbf-9bd9-4057-855b-27446313804b";
+				PROVISIONING_PROFILE_SPECIFIER = IgnisTestProfile;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,8 +8,9 @@ page-helpline-detail {
 	}
 
 	.sub-content{
-		padding-top: 8px;
-		padding-bottom: 10px;
+		border-bottom: 1px solid #000000;
+		// padding-top: 8px;
+		// padding-bottom: 10px;
 		padding-right: 0px;
 	}
 
@@ -28,6 +29,9 @@ page-helpline-detail {
 	.content-block{
 		border-top: none;
 		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+		height: auto;
+		overflow: hidden;
+		min-height: 10vh;
 		.icon {
 			position: absolute;
 			right: 20px;
@@ -45,7 +49,9 @@ page-helpline-detail {
 
 	.area-content {
 		padding: 10px;
-			color: #fff;
-			background-color: #13359e linear-gradient(#476ad0, #1b1c4d) repeat scroll 0 0;
+		padding-top: 8px;
+		padding-bottom: 10px;
+		color: #fff;
+		background: #13359e linear-gradient(#476ad0, #1b1c4d) repeat scroll 0 0;
 	}
 }

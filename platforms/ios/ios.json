@@ -113,13 +113,13 @@
                     ],
                     "NSLocationWhenInUseUsageDescription": [
                         {
-                            "xml": "<string>$NSLocationWhenInUseUsageDescription</string>",
+                            "xml": "<string>Show your location on the map</string>",
                             "count": 1
                         }
                     ],
                     "NSLocationAlwaysUsageDescription": [
                         {
-                            "xml": "<string>$NSLocationAlwaysUsageDescription</string>",
+                            "xml": "<string>Trace your location on the map</string>",
                             "count": 1
                         }
                     ],

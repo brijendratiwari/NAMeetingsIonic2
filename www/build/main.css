@@ -24454,8 +24454,7 @@ page-helpline-detail .content-detail {
 }
 
 page-helpline-detail .sub-content {
-  padding-top: 8px;
-  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
   padding-right: 0px;
 }
 
@@ -24468,6 +24467,9 @@ page-helpline-detail .img-tag {
 page-helpline-detail .content-block {
   border-top: none;
   background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+  height: auto;
+  overflow: hidden;
+  min-height: 10vh;
 }
 
 page-helpline-detail .content-block .icon {
@@ -24485,8 +24487,10 @@ page-helpline-detail .content-block p {
 
 page-helpline-detail .area-content {
   padding: 10px;
+  padding-top: 8px;
+  padding-bottom: 10px;
   color: #fff;
-  background-color: #13359e linear-gradient(#476ad0, #1b1c4d) repeat scroll 0 0;
+  background: #13359e linear-gradient(#476ad0, #1b1c4d) repeat scroll 0 0;
 }
 
 page-helpline-options .title {
@@ -24522,10 +24526,11 @@ page-helpline-options .heplines-container {
   padding: 5px;
   width: 100%;
   background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
-  height: 30px;
+  height: 50px;
+  text-shadow: 0 1px 0 #fff;
 }
 
-page-helpline-options .icon {
+page-helpline-options .heplines-container .icon {
   position: absolute;
   right: 20px;
   font-size: 22px;
@@ -24594,6 +24599,20 @@ page-helpline-options .toolbar-ios .segment-button {
   height: 3.6rem;
   line-height: 3.5rem;
   border-radius: 10px;
+}
+
+page-home .title {
+  text-align: left;
+}
+
+page-home .toolbar-ios ion-title {
+  text-align: left !important;
+  padding-left: 8px !important;
+}
+
+page-home .toolbar-title {
+  text-align: left;
+  padding-left: 8px !important;
 }
 
 page-home .prefrence {

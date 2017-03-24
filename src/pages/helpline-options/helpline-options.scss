@@ -32,14 +32,15 @@ page-helpline-options {
 		padding: 5px;
 		width: 100%;
 		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
-		height: 30px;
-	}
+		height: 50px;
+		text-shadow: 0 1px 0 #fff;
 
-	.icon {
+		.icon {
 		position: absolute;
 		right: 20px;
 		font-size: 22px;
 		color: #777;
+	}
 	}
 
 	.item-ios{

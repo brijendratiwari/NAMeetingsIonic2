@@ -24454,8 +24454,6 @@ page-helpline-detail .content-detail {
 }
 
 page-helpline-detail .sub-content {
-  padding-top: 8px;
-  padding-bottom: 10px;
   padding-right: 0px;
 }
 
@@ -24468,6 +24466,8 @@ page-helpline-detail .img-tag {
 page-helpline-detail .content-block {
   border-top: none;
   background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+  height: 15vh;
+  min-height: 10vh;
 }
 
 page-helpline-detail .content-block .icon {
@@ -24485,8 +24485,10 @@ page-helpline-detail .content-block p {
 
 page-helpline-detail .area-content {
   padding: 10px;
+  padding-top: 8px;
+  padding-bottom: 10px;
   color: #fff;
-  background-color: #13359e linear-gradient(#476ad0, #1b1c4d) repeat scroll 0 0;
+  background: #13359e linear-gradient(#476ad0, #1b1c4d) repeat scroll 0 0;
 }
 
 page-helpline-options .title {
@@ -24522,10 +24524,11 @@ page-helpline-options .heplines-container {
   padding: 5px;
   width: 100%;
   background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
-  height: 30px;
+  height: 50px;
+  text-shadow: 0 1px 0 #fff;
 }
 
-page-helpline-options .icon {
+page-helpline-options .heplines-container .icon {
   position: absolute;
   right: 20px;
   font-size: 22px;

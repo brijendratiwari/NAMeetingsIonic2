@@ -49,7 +49,6 @@ declare var window: any;
       var ref = this;
 
       if(!ref.isDownloading && ref.plt.is('android') || !ref.plt.is('android')) {
-        debugger;
         window.requestFileSystem(1, 0, function (fileSystem) {
           var dpath = "";
           if (ref.plt.is('android')) {

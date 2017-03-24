@@ -9,11 +9,14 @@
 	<ion-navbar>
 		<ion-title>Helpline Options</ion-title>
 	</ion-navbar>
+</ion-header>
 
+
+<ion-content>
 
 	<ion-toolbar no-border-top>
 		<div class="container-segment" >
-			<ion-segment [(ngModel)]="helplinesSegOne">
+			<ion-segment [(ngModel)]="helplinesSegOne" (change)="helplinesSeggueChange()">
 				<ion-segment-button value="usa">
 					USA/Canada
 				</ion-segment-button>
@@ -24,7 +27,7 @@
 		</div>
 	</ion-toolbar>
 
-	<ion-toolbar no-border-top *ngIf="helplinesSegOne == 'usa'">
+	<ion-toolbar no-border-top *ngIf="helplinesSegOne == 'usa'" (change)="helplinesSeggueChange()">
 		<div class="container-segment" >
 			<ion-segment [(ngModel)]="helplinesSegTwo">
 				<ion-segment-button value="areacode">
@@ -36,11 +39,7 @@
 			</ion-segment>
 		</div>
 	</ion-toolbar>
-
-</ion-header>
-
-
-<ion-content>
+	
 	<div [ngSwitch]="helplinesSegOne" padding>
 		<div *ngSwitchCase="'world'">
 			<div class="heplines-container" [navPush]="helplineDetailPage" *ngFor="let stateName of helplineDataCountry">

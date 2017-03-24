@@ -17,14 +17,15 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
   export class HelplineOptionsPage {
     helplineDetailPage = HelplineDetailPage;
     
-    helplinesSegOne = 'usa';
-    helplinesSegTwo = 'areacode';
+    helplinesSegOne :any;
+    helplinesSegTwo :any;
 
     helplineDataUSACANADA = [];
     helplineDataCountry = [];
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private sqliteData:SqliteData, public common:Common, public plt:Platform) {
-
+      this.helplinesSegOne = common.helplinesSegOne;
+      this.helplinesSegTwo = common.helplinesSegTwo;
     }
 
     ionViewDidLoad() {
@@ -89,11 +90,10 @@ import { HelplineDetailPage } from '../helpline-detail/helpline-detail';
         console.error(error);
       });
     }
-    usaWorldChange() {
 
+    helplinesSeggueChange() {
+      this.common.helplinesSegOne = this.helplinesSegOne;
+      this.common.helplinesSegTwo = this.helplinesSegTwo;
     }
     
-    areaSearchCode() {
-
-    }
   }

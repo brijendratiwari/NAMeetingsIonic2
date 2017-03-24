@@ -15,19 +15,18 @@
 
 <ion-content padding>
 	<div class="content-detail">
-		<div class="sub-content">
-			<div class="area-content">
-				<b>Alabarna</b>
+		<div class="sub-content" *ngFor="let data of optionnsArr">
+			<div class="area-content" *ngIf="data.type == 'option-title'">
+				<b>{{data.title}}</b>
 			</div>
-			<div class="content-block" padding>
+			<div class="content-block" padding *ngIf="data.type == 'option-details'">
 				<div style="float: left;width: 70%;">
-					<b>Southest Zonal Forms</b>
-					<p>Phone: 251.639.4156</p>
+					<b>{{data.description}}</b>
+					<p>Phone: {{data.phone}}</p>
 				</div>
 				<div>
-					<a href="tel:2516394156"><img class="img-tag"  src="./assets/phone96On.png" item-right></a>
-					<img class="img-tag"  src="./assets/Web96On.png">
-					<div class="miles-range"></div>
+					<a href="tel:{{data.phone}}"><img class="img-tag"  [src]="data.phone?'./assets/phone96On.png':'./assets/phone96Off.png'" item-right></a>
+					<a href="{{data.website}}"><img class="img-tag"  [src]="data.website?'./assets/Web96On.png':'./assets/Web96Off.png'"></a>
 				</div>
 			</div>			
 		</div>

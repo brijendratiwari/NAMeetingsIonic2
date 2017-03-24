@@ -216,7 +216,6 @@ import { SqliteData } from '../../providers/sqlite-data';
             ref.meetingDetails = "<div class='row clearfix'><div class='mtgInfo'>" + title + "</div></div>"+roomView+directionView+"<div class='row clearfix'><div class='mtgDayTime'>" + dayTime + "</div><div class='mtgClosed'>" + closedView + "</div><div class='mtgIcons'>" + no_smoking + wchair + "</div></div>" + distanceView + boroughView + allLanguages + allFormats;
 
             ref.sqliteData.showFavoriteMeetingDetails(lat2, lon2, mtgDay, mtgTime, comName).then(result => {
-              debugger;
               var ds = result['rows'];
               if(ds.length > 0){
                 ref.favoritesButtonTitle = "Remove from Favorites";

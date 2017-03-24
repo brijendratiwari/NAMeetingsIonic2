@@ -220,7 +220,6 @@ import { AppVersion } from 'ionic-native';
 
     makeSureFavMeetingsDBExists() {
 
-      debugger;
       let db = new SQLite();
       db.openDatabase(this.getDbOptionsForName("favoritemeetings.db"))
       .then(() => {
@@ -598,8 +597,7 @@ import { AppVersion } from 'ionic-native';
           // var countrySelected = $(cntry).val();
           let query = "SELECT description,areacode,phone,website,statename FROM helplines WHERE countryname = ? ORDER BY statename,areacode,description";
           db.executeSql(query, [cntry]).then((getResult) =>{
-            let count = getResult.rows.length;
-            resolve(count);
+            resolve(getResult);
           }, (error) => 
           {
             console.log('meetings SELECT error : ' + error.message);
@@ -618,10 +616,8 @@ import { AppVersion } from 'ionic-native';
         .then(() => {
           let query = "SELECT description,areacode,phone,website FROM helplines WHERE statename = ? AND countryname = ? ORDER BY areacode";
           db.executeSql(query, [stateName, countryName]).then((getResult) =>{
-            let count = getResult.rows.length;
-            resolve(count);
-          }, (error) => 
-          {
+            resolve(getResult);
+          }, (error) => {
             console.log('meetings SELECT error : ' + error.message);
             reject(error);
           });
@@ -907,7 +903,6 @@ import { AppVersion } from 'ionic-native';
 
     isAppUpdate() {
       var ref = this;
-      debugger;
 
       AppVersion.getVersionNumber().then(app_version => {
         console.log("isAppUpdate", app_version);

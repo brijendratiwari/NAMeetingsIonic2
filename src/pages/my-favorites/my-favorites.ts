@@ -28,7 +28,6 @@ declare var google: any;
 
     ionViewDidLoad() {
       console.log('ionViewDidLoad MyFavoritesPage');
-      debugger;
       this.getCurrentLocation();
 
 

@@ -19,6 +19,9 @@ declare var window: any;
     public ddlWeekdays:any = 0;
     public ddlSortby:any = "dist";
 
+    public helplinesSegOne:any = "usa";
+    public helplinesSegTwo:any = "areacode";
+
     constructor(public sqliteData:SqliteData, public http: Http , public alertCtrl:AlertController, public plt:Platform) {
       console.log('Hello Common Provider');
     }
@@ -103,14 +106,12 @@ declare var window: any;
     }
 
     isTimeToDownloadFiles(callBack) {
-      debugger;
       
       this.sqliteData.createPrefsTable().then(res => {
         if(res) {
           this.sqliteData.getPrefs().then(response => {
             let prefs = response;
             console.log(JSON.stringify(response));
-            debugger;
             if(prefs['rows'].length  ==  0) {
               this.setNextDownloadDate(30);
 

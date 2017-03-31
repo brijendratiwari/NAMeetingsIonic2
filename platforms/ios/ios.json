@@ -21,6 +21,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -99,6 +103,10 @@
                         {
                             "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -114,6 +122,10 @@
                     "NSLocationWhenInUseUsageDescription": [
                         {
                             "xml": "<string>Show your location on the map</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string> </string>",
                             "count": 1
                         }
                     ],
@@ -131,7 +143,7 @@
                     ],
                     "CFBundleURLTypes": [
                         {
-                            "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>com.ionicframework.nameetings970373</string><key>CFBundleURLSchemes</key><array><string>com.ionicframework.nameetings970373</string></array></dict></array>",
+                            "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>org.na.naapp</string><key>CFBundleURLSchemes</key><array><string>org.na.naapp</string></array></dict></array>",
                             "count": 1
                         }
                     ]
@@ -141,49 +153,56 @@
     },
     "installed_plugins": {
         "com.googlemaps.ios": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-app-version": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-googlemaps": {
             "API_KEY_FOR_IOS": "AIzaSyDPbmIeqOVCpUadyN0cujNButJQ5RJzn9k",
             "NSLOCATIONWHENINUSEUSAGEDESCRIPTION": "Show your location on the map",
             "NSLOCATIONALWAYSUSAGEDESCRIPTION": "Trace your location on the map",
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "org.na.naapp"
         }
     },
     "dependent_plugins": {},
@@ -218,6 +237,14 @@
             "pluginId": "cordova-plugin-device",
             "clobbers": [
                 "device"
+            ]
+        },
+        {
+            "id": "cordova-plugin-dialogs.notification",
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
             ]
         },
         {
@@ -466,6 +493,38 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+        },
+        {
+            "id": "cordova-plugin-geolocation.Coordinates",
+            "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Coordinates"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.PositionError",
+            "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "PositionError"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.Position",
+            "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Position"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.geolocation",
+            "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "navigator.geolocation"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -474,6 +533,7 @@
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-device": "1.1.4",
+        "cordova-plugin-dialogs": "1.3.2",
         "cordova-plugin-file": "4.3.2",
         "cordova-plugin-file-transfer": "1.6.2",
         "cordova-plugin-googlemaps": "1.4.0",
@@ -482,6 +542,7 @@
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
         "cordova-sqlite-storage": "2.0.2",
-        "ionic-plugin-keyboard": "2.2.1"
+        "ionic-plugin-keyboard": "2.2.1",
+        "cordova-plugin-geolocation": "2.4.2"
     }
 }

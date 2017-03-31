@@ -8,51 +8,58 @@
     },
     "installed_plugins": {
         "cordova-plugin-app-version": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-googlemaps": {
             "API_KEY_FOR_IOS": "AIzaSyDPbmIeqOVCpUadyN0cujNButJQ5RJzn9k",
             "NSLOCATIONWHENINUSEUSAGEDESCRIPTION": "Show your location on the map",
             "NSLOCATIONALWAYSUSAGEDESCRIPTION": "Trace your location on the map",
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "org.na.naapp"
         }
     },
     "dependent_plugins": {
         "com.googlemaps.ios": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         },
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.ionicframework.nameetings970373"
+            "PACKAGE_NAME": "org.na.naapp"
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Component,ElementRef,ViewChild } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams , Platform } from 'ionic-angular';
 import { Geolocation, GoogleMap, GoogleMapsEvent, GoogleMapsMarker, GoogleMapsLatLng } from 'ionic-native';
 import { Common } from '../../providers/common';
 import { SqliteData } from '../../providers/sqlite-data';
@@ -39,7 +39,7 @@ declare var google: any;
 
     markersArr = [];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public common:Common,  public sqliteData:SqliteData) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public common:Common,  public sqliteData:SqliteData, public plt: Platform) {
       this.infowindow = new google.maps.InfoWindow({
         disableAutoPan: true,
         maxWidth: 200
@@ -48,58 +48,61 @@ declare var google: any;
 
     ionViewDidLoad() {
 
-      this.maptype = this.navParams.get('map-type');
+      this.plt.ready().then((readySource) => {
+        this.maptype = this.navParams.get('map-type');
 
-      if(this.maptype == 'single') {
-        let latitute = parseFloat(this.navParams.get('latitute'));
-        let longitude = parseFloat(this.navParams.get('longitude'));
+        if(this.maptype == 'single') {
+          let latitute = parseFloat(this.navParams.get('latitute'));
+          let longitude = parseFloat(this.navParams.get('longitude'));
 
-        let latLng = new GoogleMapsLatLng(latitute, longitude);
-        var single_mapOptions = {
-          center: latLng,
-          zoom: 15,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
+          let latLng = new GoogleMapsLatLng(latitute, longitude);
+          var single_mapOptions = {
+            center: latLng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
 
 
-        this.map = new google.maps.Map(this.mapElement.nativeElement, single_mapOptions);
-        var ref = this;
-        setTimeout(function(){
-          let latitute = parseFloat(ref.navParams.get('latitute'));
-          let longitude = parseFloat(ref.navParams.get('longitude'));
+          this.map = new google.maps.Map(this.mapElement.nativeElement, single_mapOptions);
+          var ref = this;
+          setTimeout(function(){
+            let latitute = parseFloat(ref.navParams.get('latitute'));
+            let longitude = parseFloat(ref.navParams.get('longitude'));
 
-          let marker_latlong = new GoogleMapsLatLng(latitute, longitude);
-          if(ref.single_marker != null) {
-            ref.single_marker.setMap(null);
-          }
-          ref.single_marker = new google.maps.Marker({
-            position: marker_latlong,
-            map: ref.map,
+            let marker_latlong = new GoogleMapsLatLng(latitute, longitude);
+            if(ref.single_marker != null) {
+              ref.single_marker.setMap(null);
+            }
+            ref.single_marker = new google.maps.Marker({
+              position: marker_latlong,
+              map: ref.map,
+            });
+            ref.map.setCenter(marker_latlong);
+          }, 2000);
+        } else if(this.maptype == 'multiple') {
+                let ref = this;
+
+          var lat = 34.235920;
+          var lng = -118.563659;
+
+          Geolocation.getCurrentPosition({
+            enableHighAccuracy: false,
+            maximumAge: 3000,
+            timeout: 30000
+          }).then((position) => {
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+            ref.launchMap(lat, lng, ref);
+          },function(err) {
+            ref.launchMap(lat, lng, ref);
           });
-          ref.map.setCenter(marker_latlong);
-        }, 2000);
-      } else if(this.maptype == 'multiple') {
-        var ref = this;
+        }
 
-        var lat = 34.235920;
-        var lng = -118.563659;
+      });
 
-        Geolocation.getCurrentPosition({
-          enableHighAccuracy: true,
-          maximumAge: 3000,
-          timeout: 30000
-        }).then((position) => {
-          lat = position.coords.latitude;
-          lng = position.coords.longitude;
-          this.launchMap(lat, lng);
-        },function(err) {
-          this.launchMap(lat, lng);
-        });
-      }
     }
 
-    launchMap(lat, lng) {
-      var ref = this;
+    launchMap(lat, lng, ref) {
 
       this.SOURCE_LAT = lat;
       this.SOURCE_LNG = lng;

@@ -65,7 +65,7 @@ declare var google: any;
         if (ds.length == 0) {
           this.common.presentAlert('Information', 'You don\'t have any favorite meetings.');
         } else {
-          this.navCtrl.push(MyFavoritesPage);
+          this.navCtrl.push(MyFavoritesPage, {'lat':lat1, 'lng':lon1});
         }
       }, error => {
         this.common.presentAlert('Information', 'You don\'t have any favorite meetings.');

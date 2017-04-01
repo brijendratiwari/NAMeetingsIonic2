@@ -36,39 +36,43 @@ page-helpline-options {
 		text-shadow: 0 1px 0 #fff;
 
 		.icon {
-		position: absolute;
-		right: 20px;
-		font-size: 22px;	`
-		color: #777;
-	}
-	}
-
-	.item-ios{
-		margin-left: 5%;
-		width: 100px!important;
-		min-height:2rem !important;
-		max-height:3.2rem !important;
-		border-radius: 10px;
-		font-size: 12px!important;
+			position: absolute;
+			right: 20px;
+			font-size: 22px;
+			color: #777;
+		}
 	}
 
-	.button {
-		margin-left: 10%;
-		background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
-		border: medium none;
-		color: #000;
-		height: 25px;
-		width: 55px;
-		text-shadow: 0 1px 0 #fff;	
-	}
+
 
 	.area-code{
 		padding: 0 16px;
 		display: flex;
 		p {
+			width: 90px;
+			margin-right: 2%;
 			color: #fff;
-			font-size: 1.6rem;
+			font-size: 16px;
+			line-height: 1.4;
+			font-weight: 400;
 		}
+		.item {
+			width: 30%;
+			margin-right: 2%;
+			box-shadow: 0 0 12px #387bbe;	
+			height:25px;
+			border-radius: 10px;		
+		}
+		.button{
+			font-size: 14px;			
+			width: 30%;
+			float: left;
+			margin-left: 10px;
+			background: #6b649f linear-gradient(#fff, #6b649f) repeat scroll 0 0;
+			color: #000;
+			text-shadow: 0 1px 0 #fff;	
+		}
+
 		div:first-child{
 			display: flex;
 			align-items: center;
@@ -76,10 +80,7 @@ page-helpline-options {
 			width: 100%;
 		}
 
-		.button-ios{
-			font-size: 1.2rem;
-		}
-
+		
 		.areacode-error {
 			width: 100%;
 			text-align: center;

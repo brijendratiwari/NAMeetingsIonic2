@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-	<div class="sorting-filter-button">
+	<div class="sorting-filter-button" *ngIf="!isFilterHide">
 		<!-- <ion-label>Distance</ion-label> -->
 		<ion-item>
 		<ion-select (ionChange)="changeMiles()" [(ngModel)]="ddlMiles">

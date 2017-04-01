@@ -381,7 +381,7 @@ declare var google: any;
             };
             dataToDisplay.push(data);
           }
-          ref.navCtrl.push(NearByPage, {'meetingData':dataToDisplay});
+          ref.navCtrl.push(NearByPage, {'meetingData':dataToDisplay, 'from_map_locations':true});
 
         }
       }, error => {

@@ -27,6 +27,7 @@ declare var google: any;
     NEAR_BY_LAT;
     NEAR_BY_LNG;
 
+    isFilterHide = false;
 
     dataToDisplay = [];
 
@@ -39,6 +40,8 @@ declare var google: any;
     ionViewDidLoad() {
       console.log('ionViewDidLoad NearByPage');
       var meetingData = this.navParams.get('meetingData');
+      this.isFilterHide = this.navParams.get('from_map_locations');
+
       if(meetingData) {
         this.dataToDisplay = meetingData;
       } else {

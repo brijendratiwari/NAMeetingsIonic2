@@ -317,9 +317,9 @@ emailAFriend() {
 
   mapURL = encodeURI(mapURL);
 
-  var body_line =  encodeURI("\n");
+  var body_line =  encodeURI("<br />");
 
-  var msgBody = 'Meeting: ' + this.emailDetail.dayStartTime + body_line +'Where: ' + this.emailDetail.location + body_line + this.emailDetail.address + body_line +'Google Map Directions: ' + mapURL;
+  var msgBody = 'Meeting: ' + this.emailDetail.dayStartTime + body_line + body_line +'Where: ' + this.emailDetail.location + body_line + this.emailDetail.address + body_line + body_line + 'Google Map Directions: ' + mapURL;
 
   console.log("msgBody-- ",msgBody);
 

@@ -957,10 +957,17 @@ import { AppVersion } from 'ionic-native';
     }
     
     getDbOptionsForName(name) {
-      return {
-        name: name,
-        iosDatabaseLocation: 'Documents'
-      };
+      if(this.plt.is("android")) {
+        return {
+          name: name,
+          location: 'default'
+        };  
+      } else {
+        return {
+          name: name,
+          iosDatabaseLocation: 'Documents'
+        };
+      }
     }
     
   }
